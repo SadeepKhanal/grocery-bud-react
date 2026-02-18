@@ -19,7 +19,7 @@ const setLocalStorage = (items) => {
 
 const initialList = getLocalStorage();
 const App = () => {
-  const [items, setItems] = useState(groceryItems);
+  const [items, setItems] = useState(initialList);
   const [editId, setEditId] = useState(null);
   const inputRef = useRef(null);
 
