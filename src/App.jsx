@@ -38,6 +38,7 @@ const App = () => {
     });
     setItems(newItems);
     setEditId(null);
+    setLocalStorage(newItems);
     toast.success("item updated");
   };
 
@@ -49,7 +50,8 @@ const App = () => {
     };
     const newItems = [...items, newItem];
     setItems(newItems);
-    toast.success("grocery item added");
+    setLocalStorage(newItems);
+    toast.success("item added to the list");
   };
   const editCompleted = (itemId) => {
     const newItems = items.map((item) => {
@@ -59,11 +61,13 @@ const App = () => {
       return item;
     });
     setItems(newItems);
+    setLocalStorage(newItems);
   };
 
    const removeItem = (itemId) => {
     const newItems = items.filter((item) => item.id !== itemId);
     setItems(newItems);
+    setLocalStorage(newItems);
     toast.success("item deleted");
   };
 
